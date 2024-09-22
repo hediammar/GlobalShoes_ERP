@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfAppGlobalShoes.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Login" Height="300" Width="400">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Grid Margin="10">
+                <xctk:WatermarkTextBox Name="UsernameTextBox" Watermark="Username"/>
+            </Grid>
+            <Grid Margin="10">
+                <xctk:WatermarkPasswordBox Name="PasswordBox" Watermark="Password"/>
+            </Grid>
+            <Button Content="Login" Click="LoginButton_Click" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfAppGlobalShoes.EditSaleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Edit Sale" Height="400" Width="450">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+            <!-- Product Dropdown -->
+            <ComboBox Name="ProductComboBox" Width="250" Margin="10" DisplayMemberPath="ProductName" SelectedValuePath="ProductID"/>
+
+            <!-- Quantity Sold -->
+            <xctk:WatermarkTextBox Name="QuantitySoldTextBox" Watermark="Quantity Sold" Margin="10"/>
+
+            <!-- Client Dropdown -->
+            <ComboBox Name="ClientComboBox" Width="250" Margin="10" DisplayMemberPath="FullName" SelectedValuePath="ClientID"/>
+
+            <!-- Status Dropdown -->
+            <ComboBox Name="StatusComboBox" Width="250" Margin="10">
+                <ComboBox.ItemsSource>
+                    <x:Array Type="{x:Type sys:String}">
+                        <sys:String>Pending</sys:String>
+                        <sys:String>Delivered</sys:String>
+                        <sys:String>Cancelled</sys:String>
+                    </x:Array>
+                </ComboBox.ItemsSource>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <!-- Buttons -->
+            <Button Content="Save Changes" Click="SaveChangesButton_Click" Margin="10"/>
+            <Button Content="Cancel" Click="CancelButton_Click" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WpfAppGlobalShoes.InventoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!-- Define the layout grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- For DataGrid -->
+            <RowDefinition Height="Auto" />
+            <!-- For StackPanel -->
+        </Grid.RowDefinitions>
+
+        <!-- DataGrid for displaying inventory details -->
+        <DataGrid Name="InventoryDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Product Name" Binding="{Binding ProductName}" Width="*"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="*"/>
+                <DataGridTextColumn Header="Size" Binding="{Binding Size}" Width="*"/>
+                <DataGridTextColumn Header="Color" Binding="{Binding Color}" Width="*"/>
+                <DataGridTextColumn Header="Material" Binding="{Binding Material}" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="*"/>
+                <DataGridTextColumn Header="Manufacturing Date" Binding="{Binding ManufacturingDate}" Width="*"/>
+                <DataGridTextColumn Header="Warranty Period" Binding="{Binding WarrantyPeriod}" Width="*"/>
+                <DataGridTextColumn Header="Quantity In Stock" Binding="{Binding QuantityInStock}" Width="*"/>
+                <DataGridTextColumn Header="Last Restock Date" Binding="{Binding LastRestockDate}" Width="*"/>
+                <DataGridTextColumn Header="Minimum Stock Level" Binding="{Binding MinimumStockLevel}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- StackPanel for inputting new quantity and triggering the update -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Grid.Row="1">
+            
+                <Button Content="Update Quantity" Click="UpdateQuantityButton_Click" Margin="5"/>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

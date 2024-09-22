@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WpfAppGlobalShoes.CHARGES.ChargesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="ChargesViewControl">
+    <StackPanel Background="LightGray">
+        <TextBlock Text="Filter by Charge Type:" />
+        <ComboBox x:Name="ChargeTypeComboBox" SelectionChanged="ChargeTypeComboBox_SelectionChanged">
+            <ComboBoxItem Content="All" />
+            <ComboBoxItem Content="Electricity Bill" />
+            <ComboBoxItem Content="Water" />
+            <ComboBoxItem Content="Materials" />
+            <ComboBoxItem Content="Employee Payments" />
+        </ComboBox>
+
+        <TextBlock Text="Sort by:" />
+        <ComboBox x:Name="SortByComboBox" SelectionChanged="SortByComboBox_SelectionChanged">
+            <ComboBoxItem Content="Amount Ascending" />
+            <ComboBoxItem Content="Amount Descending" />
+            <ComboBoxItem Content="Date Ascending" />
+            <ComboBoxItem Content="Date Descending" />
+        </ComboBox>
+
+        <DataGrid x:Name="ChargesDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Height="200">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Charge ID" Binding="{Binding ChargeID}" />
+                <DataGridTextColumn Header="Charge Type" Binding="{Binding ChargeType}" />
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" />
+                <DataGridTextColumn Header="Charge Date" Binding="{Binding ChargeDate}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Paid Status" Binding="{Binding PaidStatus}" />
+                <DataGridTextColumn Header="Due Date" Binding="{Binding DueDate}" />
+                <DataGridTextColumn Header="Payment Date" Binding="{Binding PaymentDate}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+            <Button Content="Add Charge" Click="AddChargeButton_Click" />
+            <Button Content="Edit Charge" Click="EditChargeButton_Click" Margin="5,0,0,0" />
+            <Button Content="Delete Charge" Click="DeleteChargeButton_Click" Margin="5,0,0,0" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

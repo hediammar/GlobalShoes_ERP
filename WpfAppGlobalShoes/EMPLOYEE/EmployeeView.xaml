@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="WpfAppGlobalShoes.EmployeeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfAppGlobalShoes"
+             Width="800" Height="450">
+    <Grid>
+        <DataGrid x:Name="EmployeeDataGrid" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Margin="0,0,0,50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding EmployeeID}" Width="50"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" Width="100"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" Width="100"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumber}" Width="100"/>
+                <DataGridTextColumn Header="Job Title" Binding="{Binding JobTitle}" Width="150"/>
+                <DataGridTextColumn Header="Department" Binding="{Binding Department}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Add Employee" Name="btnAddEmployee" Click="BtnAddEmployee_Click" Margin="5"/>
+            <Button Content="Edit Employee" Name="btnEditEmployee" Click="BtnEditEmployee_Click" Margin="5"/>
+            <Button Content="Delete Employee" Name="btnDeleteEmployee" Click="BtnDeleteEmployee_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
