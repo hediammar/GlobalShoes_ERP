@@ -101,7 +101,7 @@ namespace WpfAppGlobalShoes {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;component/sale/addsalewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;V1.0.0.0;component/sale/addsalewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SALE\AddSaleWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

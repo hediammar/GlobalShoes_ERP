@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Animation; // Add this for Storyboard
 using WpfAppGlobalShoes.Context;
 using WpfAppGlobalShoes.Models;
 
@@ -11,9 +13,12 @@ namespace WpfAppGlobalShoes
         public LoginWindow()
         {
             InitializeComponent();
+            // Set window to full screen
+            this.WindowState = WindowState.Maximized;
+             // Remove window borders if desired
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             var username = UsernameTextBox.Text;
             var password = PasswordBox.Password;
@@ -22,13 +27,10 @@ namespace WpfAppGlobalShoes
             if (ValidateUser(username, password))
             {
                 // If validation is successful, create a new session
-                // Assuming Session is a class that holds session information
                 Session.CurrentUserId = GetUserId(username);
 
-                // Open the main window and close the login window
-                var mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
+                // Trigger the fade-out animation
+                StartFadeOutAnimation();
             }
             else
             {
@@ -44,7 +46,6 @@ namespace WpfAppGlobalShoes
                 using (var context = new GSDBContext())
                 {
                     // Check if there's a user with the given username and password
-                    // For security reasons, ensure that passwords are hashed and compared securely
                     return context.User.Any(user => user.Username == username && user.Password == password);
                 }
             }
@@ -61,7 +62,7 @@ namespace WpfAppGlobalShoes
             {
                 using (var context = new GSDBContext())
                 {
-                    // Retrieve the UserID for the given username
+                    // Retrieve the EmployeeID for the given username
                     return context.User.Where(user => user.Username == username)
                                        .Select(user => user.EmployeeID)
                                        .FirstOrDefault();
@@ -72,6 +73,40 @@ namespace WpfAppGlobalShoes
                 MessageBox.Show($"An error occurred while retrieving the user ID: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return 0; // Assuming 0 indicates an error or no user found
             }
+        }
+
+        // Method to start fade-out animation after a successful login
+        private void StartFadeOutAnimation()
+        {
+            // Retrieve the fade-out storyboard defined in XAML
+            Storyboard fadeOutStoryboard = (Storyboard)FindResource("FadeOutStoryboard");
+
+            // Add a completed event handler to load the main window after animation
+            fadeOutStoryboard.Completed += FadeOutStoryboard_Completed;
+
+            // Begin the animation
+            fadeOutStoryboard.Begin(this);
+        }
+
+        // Event handler for when the fade-out animation completes
+        private async void FadeOutStoryboard_Completed(object sender, EventArgs e)
+        {
+            // Show the loading window after fade-out
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            // Simulate a time-consuming operation
+            await Task.Delay(10000); // Replace with your actual loading logic
+
+            // Close the loading window after the simulated loading process
+            loadingWindow.Close();
+
+            // Open the main application window
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+
+            // Close the login window
+            this.Close();
         }
     }
 }

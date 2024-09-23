@@ -84,7 +84,7 @@ namespace WpfAppGlobalShoes.CHARGES {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;component/charges/chargesview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;V1.0.0.0;component/charges/chargesview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\CHARGES\ChargesView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

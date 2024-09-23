@@ -131,3 +131,5 @@ C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-wind
 C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\WpfAppGlobalShoes.pdb
 C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\WpfAppGlobalShoes.genruntimeconfig.cache
 C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\ref\WpfAppGlobalShoes.dll
+C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\LOGIN\LoadingWindow.baml
+C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\LOGIN\LoadingWindow.g.cs

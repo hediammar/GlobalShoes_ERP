@@ -76,7 +76,7 @@ namespace WpfAppGlobalShoes {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;component/inventory/updatequantitywindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;V1.0.0.0;component/inventory/updatequantitywindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\INVENTORY\UpdateQuantityWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

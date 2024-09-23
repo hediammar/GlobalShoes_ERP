@@ -60,7 +60,7 @@ namespace WpfAppGlobalShoes {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;component/inventory/inventoryview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfAppGlobalShoes;V1.0.0.0;component/inventory/inventoryview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\INVENTORY\InventoryView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

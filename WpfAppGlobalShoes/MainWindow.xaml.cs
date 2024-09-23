@@ -8,6 +8,7 @@ namespace WpfAppGlobalShoes
         public MainWindow()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
         }
 
         private void OverviewButton_Click(object sender, RoutedEventArgs e)
