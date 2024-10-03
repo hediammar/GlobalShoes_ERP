@@ -8,15 +8,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\ballLoading.gif" />
     <None Remove="Images\GSLogo.png" />
     <None Remove="Images\Hourglass.gif" />
+    <None Remove="Images\icons8-accueil-30.png" />
+    <None Remove="Images\icons8-bill-30.png" />
+    <None Remove="Images\icons8-client-30.png" />
+    <None Remove="Images\icons8-entrepot-30.png" />
+    <None Remove="Images\icons8-human-resources-30.png" />
+    <None Remove="Images\icons8-ventes-totales-30.png" />
     <None Remove="Images\login_background.jpg" />
     <None Remove="Images\login_background2.jpg" />
     <None Remove="Images\login_background3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\ballLoading.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Hourglass.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icons8-accueil-30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icons8-bill-30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icons8-client-30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icons8-entrepot-30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icons8-human-resources-30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icons8-ventes-totales-30.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\login_background.jpg">

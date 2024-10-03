@@ -96,7 +96,7 @@ namespace WpfAppGlobalShoes
             loadingWindow.Show();
 
             // Simulate a time-consuming operation
-            await Task.Delay(10000); // Replace with your actual loading logic
+            await Task.Delay(5000); // Replace with your actual loading logic
 
             // Close the loading window after the simulated loading process
             loadingWindow.Close();
