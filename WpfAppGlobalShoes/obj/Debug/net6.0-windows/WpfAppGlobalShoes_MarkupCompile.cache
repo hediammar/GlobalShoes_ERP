@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\App.xaml
-13242884064
+15366939505
 
-37-1300040771
+391853510240
 257449793274
-CHARGES\AddChargeWindow.xaml;CHARGES\ChargesView.xaml;CHARGES\EditChargeWindow.xaml;EMPLOYEE\AddEmployee.xaml;EMPLOYEE\EmployeeView.xaml;INVENTORY\InventoryView.xaml;INVENTORY\UpdateQuantityWindow.xaml;LOGIN\LoadingWindow.xaml;LOGIN\LoginWindow.xaml;MainWindow.xaml;SALE\AddSaleWindow.xaml;SALE\EditSaleWindow.xaml;SALE\SalesView.xaml;
+CHARGES\AddChargeWindow.xaml;CHARGES\ChargesView.xaml;CHARGES\EditChargeWindow.xaml;CLIENT\AddClient.xaml;CLIENT\ClientView.xaml;EMPLOYEE\AddEmployee.xaml;EMPLOYEE\EmployeeView.xaml;INVENTORY\InventoryView.xaml;INVENTORY\UpdateQuantityWindow.xaml;LOGIN\LoadingWindow.xaml;LOGIN\LoginWindow.xaml;MainWindow.xaml;SALE\AddSaleWindow.xaml;SALE\EditSaleWindow.xaml;SALE\SalesView.xaml;
 
 False
 

@@ -134,3 +134,7 @@ C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-wind
 C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\LOGIN\LoadingWindow.baml
 C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\LOGIN\LoadingWindow.g.cs
 C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\CLIENT\AddClient.baml
+C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\CLIENT\AddClient.g.cs
+C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\CLIENT\ClientView.g.cs
+C:\Users\21650\Desktop\WpfAppGlobalShoes\WpfAppGlobalShoes\obj\Debug\net6.0-windows\CLIENT\ClientView.baml

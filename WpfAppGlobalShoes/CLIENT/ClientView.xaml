@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="WpfAppGlobalShoes.ClientView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:local="clr-namespace:WpfAppGlobalShoes"
+HorizontalAlignment="Stretch"
+VerticalAlignment="Stretch">
+    <Grid>
+        <!-- DataGrid for displaying clients -->
+        <DataGrid x:Name="ClientDataGrid" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Margin="0,0,0,50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ClientID}" Width="50"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" Width="100"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" Width="100"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumber}" Width="100"/>
+                <DataGridTextColumn Header="Company" Binding="{Binding CompanyName}" Width="150"/>
+                <DataGridTextColumn Header="City" Binding="{Binding City}" Width="100"/>
+                <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Buttons for client management -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Add Client" Name="btnAddClient" Click="BtnAddClient_Click" Margin="5"/>
+            <Button Content="Edit Client" Name="btnEditClient" Click="BtnEditClient_Click" Margin="5"/>
+            <Button Content="Delete Client" Name="btnDeleteClient" Click="BtnDeleteClient_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

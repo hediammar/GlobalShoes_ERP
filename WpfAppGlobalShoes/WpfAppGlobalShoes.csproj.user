@@ -51,6 +51,12 @@
     <Page Update="CHARGES\ChargesView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="CLIENT\AddClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CLIENT\ClientView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="EMPLOYEE\AddEmployee.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -1,19 +1,30 @@
-﻿using System.Windows;
+﻿using System;
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 using WpfAppGlobalShoes.CHARGES;
+using WpfAppGlobalShoes.Context;
 
 namespace WpfAppGlobalShoes
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        private bool isSidebarMinimized = false; // Track if sidebar is visible
+        private bool isSidebarMinimized = false; // Track if sidebar is minimized
 
         public string SidebarWidth { get; set; }
-        public string OverviewButtonText { get; set; }
-        public string HRButtonText { get; set; }
-        public string InventoryButtonText { get; set; }
-        public string SalesButtonText { get; set; }
-        public string ChargesButtonText { get; set; }
-        public string ClientsButtonText { get; set; }
+        public Visibility SidebarTextVisibility { get; set; }
+
+        private string _loggedInEmployeeName;
+        public string LoggedInEmployeeName
+        {
+            get { return _loggedInEmployeeName; }
+            set
+            {
+                _loggedInEmployeeName = value;
+                OnPropertyChanged("LoggedInEmployeeName");
+            }
+        }
 
         public MainWindow()
         {
@@ -22,8 +33,39 @@ namespace WpfAppGlobalShoes
             DataContext = this;
 
             // Default expanded state
-            SidebarWidth = "120";
-            SetButtonText();
+            SidebarWidth = "300";
+            SidebarTextVisibility = Visibility.Visible;
+
+            // Fetch the employee's name based on the session
+            LoadLoggedInEmployeeName();
+        }
+
+        private void LoadLoggedInEmployeeName()
+        {
+            // Assuming you have a session that stores the EmployeeID
+            int employeeId = Session.CurrentUserId; // Replace with actual session code
+
+            // Retrieve the employee's name based on EmployeeID from the database
+            var employeeName = GetEmployeeNameById(employeeId); // Replace with your method to fetch name
+            LoggedInEmployeeName = employeeName;
+        }
+
+        private string GetEmployeeNameById(int employeeId)
+        {
+            // This is a placeholder for database access logic
+            // Replace it with your actual code to fetch the name from the DB
+            using (var db = new GSDBContext()) // Replace with your DbContext
+            {
+                var employee = db.Employees.Find(employeeId);
+                return employee != null ? $"{employee.FirstName} {employee.LastName}" : "Unknown";
+            }
+        }
+
+        // Implement INotifyPropertyChanged to update the UI when the name changes
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         private void ToggleSidebar_Click(object sender, RoutedEventArgs e)
@@ -31,27 +73,20 @@ namespace WpfAppGlobalShoes
             if (isSidebarMinimized)
             {
                 // Expand the sidebar
-                SidebarColumn.Width = new GridLength(200); ; // Set the sidebar column width back to its original value
-                Sidebar.Width = 200; // Set the sidebar width back to its original value
+                Sidebar.Width = 200; // Set the width to expanded state
+                SidebarTextVisibility = Visibility.Visible; // Show text
             }
             else
             {
                 // Minimize the sidebar
-                SidebarColumn.Width = new GridLength(50); ; // Set the sidebar column width to a minimized value
-                Sidebar.Width = 50; // Set the sidebar width to a minimized value
+                Sidebar.Width = 80; // Set the width to minimized state
+                SidebarTextVisibility = Visibility.Collapsed; // Hide text
             }
 
             isSidebarMinimized = !isSidebarMinimized; // Toggle the state
-        }
 
-        private void SetButtonText()
-        {
-            OverviewButtonText = "Overview";
-            HRButtonText = "HR";
-            InventoryButtonText = "Inventory";
-            SalesButtonText = "Sales";
-            ChargesButtonText = "Charges";
-            ClientsButtonText = "Clients";
+            // Refresh the sidebar text visibility binding
+            OnPropertyChanged(nameof(SidebarTextVisibility));
         }
 
         private void OverviewButton_Click(object sender, RoutedEventArgs e)
@@ -89,6 +124,8 @@ namespace WpfAppGlobalShoes
         private void ClientsButton_Click(object sender, RoutedEventArgs e)
         {
             // Load Clients Content
+            var ClientView = new ClientView(); // Assuming ChargesView is a UserControl
+            MainContent.Content = ClientView;
         }
     }
 }

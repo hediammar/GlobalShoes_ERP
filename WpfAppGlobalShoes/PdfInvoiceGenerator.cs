@@ -25,7 +25,7 @@ public static void GeneratePdfInvoice(Sale sale, Client client)
             document.Open();
 
             // Add Business Name and Logo (optional)
-            var logoPath = "C:/Users/21650/Desktop/GSLogo.png"; // Optional: add a logo
+            var logoPath = "pack://application:,,,/Images/GSLogo.png"; 
             if (File.Exists(logoPath))
             {
                 Image logo = Image.GetInstance(logoPath);
